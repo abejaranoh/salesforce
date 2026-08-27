@@ -61,6 +61,7 @@ CREATE TABLE talkdesk.contact (
 --    last_viewed_date          TIMESTAMP,
 --    last_referenced_date      TIMESTAMP,
 --    email_bounced_reason_2    VARCHAR(255),
+      pin                       VARCHAR(20)                        -- custom field PIN not encrypted
 
 --    CONSTRAINT fk_contact_account
 --        FOREIGN KEY (account_id) REFERENCES account(id),
