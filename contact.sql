@@ -1,4 +1,4 @@
-CREATE TABLE talkdesk.contact (
+CREATE TABLE public.contact (
     id                      VARCHAR(18)   PRIMARY KEY,          -- Salesforce Record Id
     is_deleted              BOOLEAN       DEFAULT FALSE,
     master_record_id        VARCHAR(18),
