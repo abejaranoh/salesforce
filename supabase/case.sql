@@ -1,4 +1,4 @@
-CREATE TABLE public.case (
+CREATE TABLE public.cases (
     id                          VARCHAR(18) PRIMARY KEY, -- Salesforce Record Id
     is_deleted                  BOOLEAN DEFAULT FALSE,
     master_record_id            VARCHAR(18),
@@ -48,7 +48,7 @@ CREATE TABLE public.case (
     CONSTRAINT fk_case_contact
         FOREIGN KEY (contact_id) REFERENCES public.contact(id),
      CONSTRAINT fk_case_account
-         FOREIGN KEY (account_id) REFERENCES account(id)
+         FOREIGN KEY (account_id) REFERENCES public.account(id)
     -- CONSTRAINT fk_case_asset
     --     FOREIGN KEY (asset_id) REFERENCES asset(id),
     -- CONSTRAINT fk_case_parent
