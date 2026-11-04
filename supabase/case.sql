@@ -46,9 +46,9 @@ CREATE TABLE public.case (
     -- sla_exit_date TIMESTAMP,
 
     CONSTRAINT fk_case_contact
-        FOREIGN KEY (contact_id) REFERENCES contact(id)
+        FOREIGN KEY (contact_id) REFERENCES public.contact(id),
      CONSTRAINT fk_case_account
-         FOREIGN KEY (account_id) REFERENCES account(id),
+         FOREIGN KEY (account_id) REFERENCES account(id)
     -- CONSTRAINT fk_case_asset
     --     FOREIGN KEY (asset_id) REFERENCES asset(id),
     -- CONSTRAINT fk_case_parent
