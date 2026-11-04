@@ -4,7 +4,7 @@ CREATE TABLE public.case (
     master_record_id            VARCHAR(18),
     case_number                 VARCHAR(30) NOT NULL, -- auto-generated, read-only
     contact_id VARCHAR(18), -- FK -> contact.id
-    -- account_id VARCHAR(18), -- FK -> account.id
+    account_id VARCHAR(18), -- FK -> account.id
     -- asset_id VARCHAR(18), -- FK -> asset.id
     -- source_id VARCHAR(18), -- FK -> case.id (for cloned/linked cases)
     -- business_hours_id VARCHAR(18), -- FK -> business_hours.id
@@ -47,8 +47,8 @@ CREATE TABLE public.case (
 
     CONSTRAINT fk_case_contact
         FOREIGN KEY (contact_id) REFERENCES contact(id)
-    -- CONSTRAINT fk_case_account
-    --     FOREIGN KEY (account_id) REFERENCES account(id),
+     CONSTRAINT fk_case_account
+         FOREIGN KEY (account_id) REFERENCES account(id),
     -- CONSTRAINT fk_case_asset
     --     FOREIGN KEY (asset_id) REFERENCES asset(id),
     -- CONSTRAINT fk_case_parent
