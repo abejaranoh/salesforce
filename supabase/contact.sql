@@ -2,7 +2,7 @@ CREATE TABLE public.contact (
     id                      VARCHAR(18)   PRIMARY KEY,          -- Salesforce Record Id
     is_deleted              BOOLEAN       DEFAULT FALSE,
     master_record_id        VARCHAR(18),
---    account_id              VARCHAR(18),                        -- FK -> account.id
+    account_id              VARCHAR(18),                        -- FK -> account.id
     last_name               VARCHAR(80)   NOT NULL,
     first_name              VARCHAR(40),
     salutation              VARCHAR(40),
