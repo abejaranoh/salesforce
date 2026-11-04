@@ -1,5 +1,6 @@
 -- Salesforce Account object
 -- https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_account.htm
+-- Run this BEFORE contact.sql (contact.account_id references account.id)
 
 CREATE TABLE public.account (
     id VARCHAR(18) PRIMARY KEY,                -- Salesforce Record Id
@@ -60,7 +61,7 @@ CREATE TABLE public.account (
     -- owner_id VARCHAR(18) NOT NULL,           -- FK -> user.id
     created_date TIMESTAMP NOT NULL,
     -- created_by_id VARCHAR(18) NOT NULL,      -- FK -> user.id
-    last_modified_date TIMESTAMP NOT NULL,
+    last_modified_date TIMESTAMP NOT NULL
     -- last_modified_by_id VARCHAR(18) NOT NULL, -- FK -> user.id
     -- system_modstamp TIMESTAMP NOT NULL,
     -- last_activity_date DATE,
@@ -68,12 +69,9 @@ CREATE TABLE public.account (
     -- last_referenced_date TIMESTAMP
 
     -- CONSTRAINT fk_account_parent
-    --     FOREIGN KEY (parent_id) REFERENCES account(id),
+    --     FOREIGN KEY (parent_id) REFERENCES public.account(id),
     -- CONSTRAINT fk_account_owner
     --     FOREIGN KEY (owner_id) REFERENCES "user"(id)
 );
 
--- contact.sql links back here through contact.account_id (currently commented out):
--- ALTER TABLE talkdesk.contact
---     ADD CONSTRAINT fk_contact_account
---     FOREIGN KEY (account_id) REFERENCES talkdesk.account(id);
+ALTER TABLE public.account ENABLE ROW LEVEL SECURITY;
